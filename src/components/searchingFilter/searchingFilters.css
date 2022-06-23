@@ -25,6 +25,18 @@
   flex-grow: 1;
 }
 
+.searching-filters__serch-name-button {
+  border: none;
+  background-color: #ffffff;
+  color: #3f51b5;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.searching-filters__serch-name-button:hover {
+  color: #7e90f5;
+}
+
 .searching-filters__button {
   width: 10%;
   border: none;

@@ -47,6 +47,20 @@ const SearchingFilter = () => {
       .then((data) => setSearchedGamesArray(data));
   };
 
+  const userFilterSearchSubmitHandler = () => {
+    // https://api.igdb.com/v4 === /games_api/
+    fetch("/games_api/games/", {
+      method: "POST",
+      headers: {
+        "Client-ID": "r8ndcz4yox3p6e5ndgzrhlmbsharhk",
+        Authorization: "Bearer 19bj2thdtj93gj9en7lccpcz4hirsu",
+      },
+      body: `fields id, name, release_dates.human, rating, game_engines, summary, involved_companies, cover.url, genres.name; limit 10;`,
+    })
+      .then((response) => response.json())
+      .then((data) => setSearchedGamesArray(data));
+  };
+
   return (
     <div className="searching-filters__own-container">
       <div className="searching-filters__container">
@@ -60,6 +74,13 @@ const SearchingFilter = () => {
         />
 
         <button
+          onClick={() => userSearchSubmitHandler()}
+          className="searching-filters__serch-name-button"
+        >
+          SEARCH BY NAME
+        </button>
+
+        <button
           onClick={(e) => clickFilterHandler(e)}
           className="searching-filters__button"
         >
@@ -70,15 +91,16 @@ const SearchingFilter = () => {
       {/* child filters inputs */}
       <div className={inputsVisibility}>
         <FilterInputs
-          searchSubmit={(e) => userSearchSubmitHandler(e)}
+          searchSubmit={(e) => userFilterSearchSubmitHandler(e)}
           searchParams={setUserFilterSearchParams}
         />
       </div>
-      
-      {searchedGamesArray.length > 0 && <SearchedGamesList searchedGamesArray={searchedGamesArray} />}
+
+      {searchedGamesArray.length > 0 && (
+        <SearchedGamesList searchedGamesArray={searchedGamesArray} />
+      )}
     </div>
   );
 };
 
 export default SearchingFilter;
-

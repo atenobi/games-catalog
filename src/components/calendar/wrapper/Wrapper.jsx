@@ -26,19 +26,6 @@ const Wrapper = ({
       monthSetter(december);
       yearSetter(curYear - 1);
     }
-
-    // if (curMonth !== january && curMonth > date.currentMonth && curYear > date.currentYear) {
-    //   monthSetter(curMonth - 1);
-    // }
-
-    // else if (curYear > date.currentYear) {
-    //   monthSetter(december);
-    //   yearSetter(curYear - 1);
-    // }
-    // else {
-    //   monthSetter(date.currentMonth);
-    //   yearSetter(date.currentYear);
-    // }
   };
 
   const monthButtonPlus = () => {
@@ -105,7 +92,7 @@ const Wrapper = ({
                     }
                     onClick={() => {
                       setReleaseDate(`${dayNum} ${monthText} ${curYear}`);
-                      setDateInput(`${dayNum} ${monthText} ${curYear}`);
+                      setDateInput(`${monthText.slice(0, 3)} ${dayNum}, ${curYear}`);
                     }}
                   >
                     {dayNum}

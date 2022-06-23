@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 const SearchedGamesList = ({ searchedGamesArray }) => {
   const showAllText = (e, text) => {
@@ -63,8 +63,8 @@ const SearchedGamesList = ({ searchedGamesArray }) => {
   );
 };
 
-SearchedGamesList.PropTypes = {
-  searchedGamesArray: PropTypes.array.isRequired,
+SearchedGamesList.propTypes = {
+  searchedGamesArray: propTypes.array.isRequired,
 };
 
 export default SearchedGamesList;

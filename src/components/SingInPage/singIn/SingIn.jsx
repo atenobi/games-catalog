@@ -17,6 +17,7 @@ const SingIn = () => {
   const navigate = useNavigate();
   const [insertedMail, setInsertedMail] = useState("");
   const [insertedPass, setInsertedPass] = useState("");
+  
   // from input -> to state
   const inputMailHandler = (e) => setInsertedMail(e.target.value);
   const inputPassHandler = (e) => setInsertedPass(e.target.value);

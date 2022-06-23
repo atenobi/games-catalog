@@ -1,9 +1,63 @@
 .searched-games-list__container {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .searched-games-list__game-card {
-    width: 25%;
-    display: block;
-    margin: 10px;
+  width: 30%;
+  display: block;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.searched-games-list__game-card__text-container {
+  height: 120px;
+}
+
+.searched-games__game-card__rate {
+  display: inline;
+  margin-right: 17px;
+  padding: 5px;
+  background-color: #f14545;
+  border-radius: 50%;
+  color: white;
+}
+
+.searched-games__game-card__name {
+  height: 50px;
+  display: inline;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.searched-games__game-card__release {
+  margin-top: 20px;
+  color: grey;
+  text-align: center;
+}
+
+.searched-games__game-card__image-container {
+  margin: 0;
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+
+.searched-games__game-card--image {
+  width: 100%;
+}
+
+.searched-games__game-card__genres-container {
+  margin-top: 20px;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.searched-games__game-card__summary {
+  margin-top: 20px;
+  cursor: pointer;
 }

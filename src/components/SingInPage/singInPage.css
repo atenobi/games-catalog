@@ -1,0 +1,74 @@
+.sing-in-container {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto 40px;
+  padding: 20px;
+  border: 5px solid #c6c6c6;
+}
+
+.sing-in-swich-button {
+    width: 50%;
+    outline: none;
+    border: hidden;
+    background: #ffffff;
+    font-size: 20px;
+    color: #43b3ff;
+    padding: 20px;
+    border-radius: 5px 5px 0 0;
+    transition: 400ms;
+}
+
+.sing-in-swich-button:hover {
+    background: #d74343;
+    color: #ffffff; 
+}
+
+.sing-in-swich-button:active {
+    background: #d74343;
+    color: #ffffff; 
+}
+
+.sing-in-input {
+    margin-top: 20px;
+    outline: none;
+    border: 1px solid #c6c6c6;
+    padding: 15px 5px;
+    font-size: 20px;
+}
+
+.sing-in__label-text {
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.sing-in__submit-button {
+    width: 30%;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    background-color: #d74343;
+    color: #ffffff; 
+}
+
+.sing-in__submit-button:hover {
+    background: #a23333;
+    color: #ffffff; 
+}
+
+.sing-in__submit-button:active {
+    background: #a23333;
+    color: #ffffff; 
+}
+
+.sing-in__alert-false {
+    color: #d74343;
+    font-size: 20px;
+}
+
+.sing-in__alert-true {
+    color: #20ce27;
+    font-size: 20px;
+}

@@ -1,0 +1,60 @@
+.filter-inputs__own-container {
+  display: block;
+  margin: 20px auto;
+  text-align: end;
+  width: 100%;
+}
+
+.filter-inputs__container {
+  margin: 40px auto 60px;
+  text-align: start;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.filter-inputs__calendar-container {
+  margin-right: 10px;
+  display: inline;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.filter-inputs__calendar-button {
+  border: none;
+  background-color: #ffffff;
+  color: #3f51b5;
+  margin-left: 10px;
+}
+
+.filter-inputs__input {
+    margin-right: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid grey;
+}
+
+.filter-inputs__rating-range {
+  display: inline;
+  position: relative;
+}
+
+.filter-inputs__rating-range--label {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+}
+
+.filter-inputs__button {
+  border: none;
+  background-color: #ffffff;
+  color: #3f51b5;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.filter-inputs__button:hover {
+  color: #7e90f5;
+}

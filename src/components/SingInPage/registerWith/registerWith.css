@@ -1,0 +1,43 @@
+.register-with__container {
+    text-align: center;
+}
+
+.register-with__title {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.register-with__link-container {
+    margin-top: 20px;
+}
+
+.register-with__link-button {
+    width: 33%;
+    padding: 15px;
+    font-size: 15px;
+    border: none;
+    transition: 400ms;
+}
+
+.register-with__link-button:hover {
+    /* font-size: 17px;     */
+    border-radius: 20px;
+}
+
+.facebook-button {
+    background-color: #3b5998;
+}
+
+.google-button {
+    background-color: #e74c3d;
+}
+
+.twitter-button {
+    background-color: #3698d9;
+}
+
+.register-with__link {
+    text-decoration: none;
+    color: #ffffff
+}

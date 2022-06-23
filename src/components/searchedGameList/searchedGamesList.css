@@ -1,0 +1,9 @@
+.searched-games-list__container {
+    width: 100%;
+}
+
+.searched-games-list__game-card {
+    width: 25%;
+    display: block;
+    margin: 10px;
+}

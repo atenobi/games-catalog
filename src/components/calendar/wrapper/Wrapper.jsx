@@ -91,8 +91,11 @@ const Wrapper = ({
                         : "calendar_wrapper_body_item"
                     }
                     onClick={() => {
-                      setReleaseDate(`${dayNum} ${monthText} ${curYear}`);
-                      setDateInput(`${monthText.slice(0, 3)} ${dayNum}, ${curYear}`);
+                      setDateInput(`${monthText} ${dayNum}, ${curYear}`);
+
+                      setReleaseDate(
+                        `${monthText} ${curDay}, ${curYear}`
+                      );
                     }}
                   >
                     {dayNum}

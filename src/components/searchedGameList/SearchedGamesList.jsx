@@ -14,7 +14,6 @@ const SearchedGamesList = ({ searchedGamesArray }) => {
   return (
     <div className="searched-games-list__container">
       {searchedGamesArray.map((game) => {
-        console.log(searchedGamesArray);
         return (
           <div key={game.id} className="searched-games-list__game-card">
             <div className="searched-games-list__game-card__text-container">

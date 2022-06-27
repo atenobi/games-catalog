@@ -92,46 +92,56 @@ const FilterInputs = ({ searchSubmit, searchParams }) => {
 
         <select
           type="text"
-          placeholder="Genres"
           className="filter-inputs__input"
           onChange={(e) => valueSaver(e, setGenre)}
         >
+          <option value="default" disabled selected>
+            GENRES
+          </option>
           {optionMaker(genres)}
         </select>
 
         <select
           type="text"
-          placeholder="Platforms"
           className="filter-inputs__input"
           onChange={(e) => valueSaver(e, setPlatform)}
         >
+          <option value="default" disabled selected>
+            PLATFORMS
+          </option>
           {optionMaker(platforms)}
         </select>
 
         <select
           type="text"
-          placeholder="Game Engines"
           className="filter-inputs__input"
           onChange={(e) => valueSaver(e, setEngine)}
         >
+          <option value="default" disabled selected>
+            GAME ENGINES
+          </option>
           {optionMaker(gameEngines)}
         </select>
 
         <select
           type="text"
-          placeholder="PEGI Rating"
           className="filter-inputs__input"
           onChange={(e) => valueSaver(e, setPegi)}
         >
+          <option disabled selected>
+            PEGI RATING
+          </option>
           {optionMaker(pegiRating)}
         </select>
 
         <select
           type="text"
-          placeholder="Game Modes"
           className="filter-inputs__input"
           onChange={(e) => valueSaver(e, setGameMode)}
         >
+          <option disabled selected>
+            GAME MODES
+          </option>
           {optionMaker(gameModes)}
         </select>
 
@@ -153,7 +163,12 @@ const FilterInputs = ({ searchSubmit, searchParams }) => {
         </div>
       </div>
 
-      <button className="filter-inputs__button" onClick={()=> userCanselHandler()}>CANSEL</button>
+      <button
+        className="filter-inputs__button"
+        onClick={() => userCanselHandler()}
+      >
+        CANSEL
+      </button>
       <button className="filter-inputs__button" onClick={() => searchSubmit()}>
         SEARCH
       </button>

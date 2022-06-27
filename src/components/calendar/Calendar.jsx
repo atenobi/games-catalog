@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 // components
@@ -16,14 +16,20 @@ const Calendar = ({ activeWrapper, setReleaseDate }) => {
 
   wrapperBody(month, year, arrayDay);
 
+  useEffect(() => {
+    setReleaseDate(dateInput);
+  }, [dateInput]);
+
   return (
     <>
       <div className="calendar_input">
         <input
-          type="text"
+          className="form_text"
           placeholder={dateInput}
-          className="form_input"
-          onChange={(e) => setReleaseDate(e.target.value)}
+          value={dateInput}
+          onChange={(e) => {
+            setDateInput(e.target.value);
+          }}
         />
         {activeWrapper && (
           <div>

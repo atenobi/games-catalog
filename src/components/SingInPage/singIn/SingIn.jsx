@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import RegisterWith from "../registerWith/RegisterWith";
 
 // js functions
-import { checkMailPassword } from "../../../assets/userSingIn";
+import { checkMailPassword } from "../../../utils/userSingIn";
 
 // array of users
 import { usersArray } from "../../../constants/usersArray";

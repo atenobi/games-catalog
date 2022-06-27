@@ -1,12 +1,12 @@
-.calendar_input {
+.calendar_text {
     position: relative;
     width: 20%;
 }
 
 .calendar_wrapper {
     position: absolute;
-    top: 30px;
-    left: 0;
+    top: 230px;
+    left: 160px;
     width: auto;
     height: auto;
     padding: 15px;

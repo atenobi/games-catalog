@@ -51,6 +51,7 @@
 }
 
 .searched-games__game-card__genres-container {
+  min-height: 85px;
   margin-top: 20px;
   font-size: 17px;
   font-weight: 600;
@@ -58,6 +59,32 @@
 }
 
 .searched-games__game-card__summary {
-  margin-top: 20px;
+  min-height: 120px;
+  margin: 20px 0;
   cursor: pointer;
+}
+
+.searched-games__game-card__game-page-link {
+  text-decoration: none;
+    color: #3f51b5;
+    border: 1px solid #3f51b5;
+    border-radius: 5px;
+    padding: 0 10px 0px;
+    margin-right: 10px;
+}
+
+.searched-games__game-card__game-page-link:hover {
+  color: #9faaec;
+}
+
+.searched-games__game-card__game-page-button {
+    border: none;
+    background-color: #ffffff;
+    color: #3f51b5;
+    font-weight: 800;
+    font-size: 23px;
+}
+
+.searched-games__game-card__game-page-button:hover {
+  color: #9faaec;
 }

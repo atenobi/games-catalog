@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 //router
 import { useNavigate } from "react-router-dom";
@@ -22,12 +22,10 @@ const SingIn = () => {
   const inputMailHandler = (e) => setInsertedMail(e.target.value);
   const inputPassHandler = (e) => setInsertedPass(e.target.value);
 
-  // useEffect(()=> {
-  //   checkMailPassword(usersArray, insertedMail, insertedPass)
-  // }, [insertedMail, insertedPass]);
-
   const singInClickHandler = () => {
-    if (checkMailPassword(usersArray, insertedMail, insertedPass)) {
+    if (!(checkMailPassword(usersArray, insertedMail, insertedPass).status)) {
+      navigate("/join");
+    } else {
       navigate("/");
     }
   };

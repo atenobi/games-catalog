@@ -22,9 +22,9 @@ const Calendar = ({ activeWrapper, setReleaseDate }) => {
 
   return (
     <>
-      <div className="calendar_input">
+      <div className="calendar__input-container">
         <input
-          className="form_text"
+          className="calendar__main-input"
           placeholder={dateInput}
           value={dateInput}
           onChange={(e) => {

@@ -48,6 +48,7 @@ const JoinUs = () => {
         })
       );
       setInfo({ status: true, text: "Everything is fine, the data is saved!" });
+      navigate("/");
     }
 
     if (!nameVerify(inputUserName)) {

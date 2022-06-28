@@ -37,17 +37,17 @@ const SearchingFilter = () => {
     }
   };
 
-  const apiHeaders = {
-    "Client-ID": "r8ndcz4yox3p6e5ndgzrhlmbsharhk",
-    Authorization: "Bearer 19bj2thdtj93gj9en7lccpcz4hirsu",
-  };
-
   const userSearchSubmitHandler = () => {
+    const apiHeaders = {
+      "Client-ID": "r8ndcz4yox3p6e5ndgzrhlmbsharhk",
+      Authorization: "Bearer 19bj2thdtj93gj9en7lccpcz4hirsu",
+    };
+
     // https://api.igdb.com/v4 === /games_api/
     fetch("/games_api/games/", {
       method: "POST",
       headers: apiHeaders,
-      body: `fields id, name, release_dates.human, rating, game_engines.name, summary, cover.url, genres.name, platforms.name, game_modes.name;
+      body: `fields id, name, release_dates.human, rating, game_engines.name, summary, cover.url, genres.name, platforms.name, game_modes.name, url;
         search "${gameName}";
         limit 500;`,
     })
@@ -81,14 +81,13 @@ const SearchingFilter = () => {
   };
 
   useEffect(() => {
-    setFiltredGamesArray([]);
     gamesFilter(searchedGamesArray, userFilterSearchParams);
-    // genreFilter(searchedGamesArray, userFilterSearchParams);
   }, [userFilterSearchParams]);
 
   const userFilterSearchSubmitHandler = () => {
-    // gamesFilter(searchedGamesArray, userFilterSearchParams);
     console.log(searchedGamesArray);
+    console.log(filtredGamesArray);
+    console.log(userFilterSearchParams);
   };
 
   return (
@@ -127,7 +126,7 @@ const SearchingFilter = () => {
       </div>
 
       {searchedGamesArray.length > 0 && (
-        <SearchedGamesList searchedGamesArray={filtredGamesArray} />
+        <SearchedGamesList searchedGamesArray={filtredGamesArray} addButton={true} />
       )}
     </div>
   );

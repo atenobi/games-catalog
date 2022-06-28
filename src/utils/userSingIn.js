@@ -12,6 +12,6 @@ export const checkMailPassword = (arr, value, pass) => {
         }
        } 
     })
-    console.log(result);
+    // console.log(result);
     return result;
 }

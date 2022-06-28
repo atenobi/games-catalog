@@ -30,6 +30,8 @@ export const genreFilter = (arr, parameter) => {
       arrOfObjToTextArr(game.genres).includes(parameter)
     ) {
       result.push(game);
+    } else if (parameter === "---any---") {
+      result.push(game);
     }
   });
   return result;
@@ -40,9 +42,12 @@ export const platformFilter = (arr, parameter) => {
   let result = [];
   arr.forEach((game) => {
     if (
+      // !parameter &&
       game.platforms &&
       arrOfObjToTextArr(game.platforms).includes(parameter)
     ) {
+      result.push(game);
+    } else if (parameter === "---any---") {
       result.push(game);
     }
   });
@@ -54,9 +59,12 @@ export const engineFilter = (arr, parameter) => {
   let result = [];
   arr.forEach((game) => {
     if (
+      // !parameter &&
       game.game_engines &&
       arrOfObjToTextArr(game.game_engines).includes(parameter)
     ) {
+      result.push(game);
+    } else if (parameter === "---any---") {
       result.push(game);
     }
   });
@@ -68,9 +76,12 @@ export const gameModeFilter = (arr, parameter) => {
   let result = [];
   arr.forEach((game) => {
     if (
+      // !parameter &&
       game.game_modes &&
       arrOfObjToTextArr(game.game_modes).includes(parameter)
     ) {
+      result.push(game);
+    } else if (parameter === "---any---") {
       result.push(game);
     }
   });

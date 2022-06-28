@@ -5,7 +5,7 @@ export const genres = [
   "Adventure",
   "Shooter",
   "Simulator",
-  "",
+  "---any---",
 ];
 
 export const platforms = [
@@ -27,7 +27,7 @@ export const platforms = [
   "Mac",
   "Windows Phone",
   "PlayStation Vita",
-  "",
+  "---any---",
 ];
 
 export const gameEngines = [
@@ -42,10 +42,10 @@ export const gameEngines = [
   "Autodesk",
   "X-ray Engine",
   "Blam! Engine",
-  "",
+  "---any---",
 ];
 
-export const pegiRating = ["3", "7", "12", "16", "18", ""];
+export const pegiRating = ["3", "7", "12", "16", "18", "---any---"];
 
 export const gameModes = [
   "MMO",
@@ -53,5 +53,5 @@ export const gameModes = [
   "Single player",
   "Multiplayer",
   "Split Screen",
-  "",
+  "---any---",
 ];

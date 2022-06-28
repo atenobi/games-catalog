@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 //router
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import RegisterWith from "../registerWith/RegisterWith";
 
 // js functions
-import { checkMailPassword } from "../../../assets/userSingIn";
+import { checkMailPassword } from "../../../utils/userSingIn";
 
 // array of users
 import { usersArray } from "../../../constants/usersArray";
@@ -17,16 +17,15 @@ const SingIn = () => {
   const navigate = useNavigate();
   const [insertedMail, setInsertedMail] = useState("");
   const [insertedPass, setInsertedPass] = useState("");
+  
   // from input -> to state
   const inputMailHandler = (e) => setInsertedMail(e.target.value);
   const inputPassHandler = (e) => setInsertedPass(e.target.value);
 
-  // useEffect(()=> {
-  //   checkMailPassword(usersArray, insertedMail, insertedPass)
-  // }, [insertedMail, insertedPass]);
-
   const singInClickHandler = () => {
-    if (checkMailPassword(usersArray, insertedMail, insertedPass)) {
+    if (!(checkMailPassword(usersArray, insertedMail, insertedPass).status)) {
+      navigate("/join");
+    } else {
       navigate("/");
     }
   };

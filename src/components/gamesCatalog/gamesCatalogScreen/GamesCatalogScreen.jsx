@@ -2,7 +2,7 @@ import React from "react";
 import propTypes from "prop-types";
 
 // js
-import {imageLinkClearFu} from '../../../assets/imageCleare';
+import {imageLinkClearFu} from '../../../utils/imageCleare';
 
 const GamesCatalogScreen = ({ array }) => {
     return (

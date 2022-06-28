@@ -13,7 +13,7 @@ import { setUser } from "../../../redux/actions";
 import RegisterWith from "../registerWith/RegisterWith";
 
 // js functions
-import { nameVerify, mailVerify, passVerify } from "../../../assets/userVerify";
+import { nameVerify, mailVerify, passVerify } from "../../../utils/userVerify";
 
 const JoinUs = () => {
   const navigate = useNavigate();
@@ -48,6 +48,7 @@ const JoinUs = () => {
         })
       );
       setInfo({ status: true, text: "Everything is fine, the data is saved!" });
+      navigate("/");
     }
 
     if (!nameVerify(inputUserName)) {

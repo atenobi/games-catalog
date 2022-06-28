@@ -1,21 +1,31 @@
-import axios from "axios";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+// api
 import api from "../../api";
+// redux store
+import { useDispatch, useSelector } from "react-redux";
+import { setTopGames } from "../../redux/actions";
+
 
 // child components 
 import GamesCatalogScreen from "./gamesCatalogScreen/GamesCatalogScreen";
+// import topGames from "../../redux/topGamesReducer";
+import { selectTopGames } from "../../redux/selectors";
 
 const GamesCatalog = () => {
+  const dispatch = useDispatch();
+  // const topGamesSelector = useSelector(selectTopGames);
   const [games, setGames] = useState([]);
 
   const refreshGames = () => {
     const fetchData = async () => {
       const result = await api.get("https://api.twitch.tv/helix/games/top");
       setGames(result.data.data);
+      dispatch(setTopGames(result.data.data))
     };
     fetchData();
   };
+
+  // console.log(topGamesSelector);
 
   return (
     <div className="games-catalog__container">

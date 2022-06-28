@@ -1,11 +1,17 @@
-.calendar_input {
+.calendar__input-container {
     position: relative;
     width: 20%;
 }
 
+.calendar__main-input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
 .calendar_wrapper {
     position: absolute;
-    top: 30px;
+    top: 50px;
     left: 0;
     width: auto;
     height: auto;
@@ -53,7 +59,7 @@
 }
 
 .calendar_wrapper_button:hover {
-    background: black;
+    background: rgb(20, 2, 155);
 }
 
 .calendar_wrapper__body {

@@ -7,6 +7,9 @@ import SearchedGamesList from "../searchedGameList/SearchedGamesList";
 // js filters
 import { dateFilter, ratingFilter, genreFilter, platformFilter, engineFilter, gameModeFilter } from "../../utils/filters";
 
+// js functions
+import { addGames } from "../../utils/addRemoveGames";
+
 const SearchingFilter = () => {
   const [inputsVisibility, setInputsVisibility] = useState("hidden-el");
 
@@ -126,7 +129,7 @@ const SearchingFilter = () => {
       </div>
 
       {searchedGamesArray.length > 0 && (
-        <SearchedGamesList searchedGamesArray={filtredGamesArray} addButton={true} />
+        <SearchedGamesList searchedGamesArray={filtredGamesArray} gamesAction={addGames} />
       )}
     </div>
   );

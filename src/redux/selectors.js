@@ -1,2 +1,2 @@
 export const selectUsers = (state) => state.users;
-export const selectTopGames = (state) => state.topGames;
+export const selectTopGames = (state) => state.topGames.topGames;

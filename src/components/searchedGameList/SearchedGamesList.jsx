@@ -3,13 +3,14 @@ import propTypes from "prop-types";
 
 // redux
 import { useDispatch } from "react-redux/es/hooks/useDispatch";
-import { setTopGames } from "../../redux/actions";
+import { clearTopGames, setTopGames } from "../../redux/actions";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { selectTopGames } from "../../redux/selectors";
 
-const SearchedGamesList = ({ searchedGamesArray, addButton }) => {
-  const gameDispatch = useDispatch(setTopGames);
+const SearchedGamesList = ({ searchedGamesArray, gamesAction }) => {
+  const gameDispatch = useDispatch();
   const stateGames = useSelector(selectTopGames);
+
   const showAllText = (e, text) => {
     if (text.length > 200 && e.target.textContent.length === 200) {
       e.target.textContent = text;
@@ -18,20 +19,11 @@ const SearchedGamesList = ({ searchedGamesArray, addButton }) => {
     }
   };
 
-  const addGames = (game) => {
-    const gamesArr = [];
-    const ids = [];
+  const ids = [];
 
-    stateGames.forEach((element) => {
-      ids.push(element.id);
-    });
-
-    if (stateGames.length === 0 || !ids.includes(game.id)) {
-      gamesArr.push(game);
-      gameDispatch(setTopGames(gamesArr));
-      console.log(stateGames);
-    }
-  };
+  stateGames.forEach((element) => {
+    ids.push(element.id);
+  });
 
   return (
     <div className="searched-games-list__container">
@@ -88,14 +80,20 @@ const SearchedGamesList = ({ searchedGamesArray, addButton }) => {
               </a>
             )}
 
-            {addButton && (
-              <button
-                className="searched-games__game-card__game-page-button"
-                onClick={() => addGames(game)}
-              >
-                +
-              </button>
-            )}
+            <button
+              className="searched-games__game-card__game-page-button"
+              onClick={() =>
+                gamesAction(
+                  game,
+                  stateGames,
+                  gameDispatch,
+                  setTopGames,
+                  clearTopGames
+                )
+              }
+            >
+            {(ids.includes(game.id) ? "✓" : "+")}
+            </button>
           </div>
         );
       })}
@@ -105,6 +103,7 @@ const SearchedGamesList = ({ searchedGamesArray, addButton }) => {
 
 SearchedGamesList.propTypes = {
   searchedGamesArray: propTypes.array.isRequired,
+  gamesAction: propTypes.func.isRequired,
 };
 
 export default SearchedGamesList;

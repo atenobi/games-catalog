@@ -7,6 +7,10 @@ import SearchedGamesList from "../searchedGameList/SearchedGamesList";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { selectTopGames } from "../../redux/selectors";
 
+// js functions
+import { removeGame } from "../../utils/addRemoveGames";
+import { clearTopGames } from "../../redux/actions";
+
 const UserGamesPage = () => {
   const addedGames = useSelector(selectTopGames);
   console.log(addedGames);
@@ -16,7 +20,7 @@ const UserGamesPage = () => {
       {addedGames.length > 0 && (
         <>
           <h4 className="user-games-page--title">You`r games</h4>
-          <SearchedGamesList searchedGamesArray={addedGames} addButton={false} />
+          <SearchedGamesList searchedGamesArray={addedGames} gamesAction={removeGame} />
         </>
       )}
     </div>

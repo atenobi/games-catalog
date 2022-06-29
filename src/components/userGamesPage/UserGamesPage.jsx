@@ -20,7 +20,7 @@ const UserGamesPage = () => {
       {addedGames.length > 0 && (
         <>
           <h4 className="user-games-page--title">You`r games</h4>
-          <SearchedGamesList searchedGamesArray={addedGames} gamesAction={removeGame} />
+          <SearchedGamesList searchedGamesArray={addedGames} gamesAction={removeGame} sign={"🗑"} />
         </>
       )}
     </div>

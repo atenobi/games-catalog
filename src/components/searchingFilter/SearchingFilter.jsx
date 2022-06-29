@@ -129,7 +129,7 @@ const SearchingFilter = () => {
       </div>
 
       {searchedGamesArray.length > 0 && (
-        <SearchedGamesList searchedGamesArray={filtredGamesArray} gamesAction={addGames} />
+        <SearchedGamesList searchedGamesArray={filtredGamesArray} gamesAction={addGames} sign={"✓"}/>
       )}
     </div>
   );

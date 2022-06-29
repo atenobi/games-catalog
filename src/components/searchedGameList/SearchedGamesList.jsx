@@ -7,7 +7,7 @@ import { clearTopGames, setTopGames } from "../../redux/actions";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { selectTopGames } from "../../redux/selectors";
 
-const SearchedGamesList = ({ searchedGamesArray, gamesAction }) => {
+const SearchedGamesList = ({ searchedGamesArray, gamesAction, sign }) => {
   const gameDispatch = useDispatch();
   const stateGames = useSelector(selectTopGames);
 
@@ -92,7 +92,7 @@ const SearchedGamesList = ({ searchedGamesArray, gamesAction }) => {
                 )
               }
             >
-            {(ids.includes(game.id) ? "✓" : "+")}
+            {(ids.includes(game.id) ? `${sign}` : "+")}
             </button>
           </div>
         );

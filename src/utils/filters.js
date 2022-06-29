@@ -1,4 +1,3 @@
-
 const arrOfObjToTextArr = (array) => {
   const textArray = [];
   array.forEach((element) => textArray.push(element.name));
@@ -12,8 +11,7 @@ export const dateFilter = (arr, parameter) => {
     (game) =>
       game.release_dates &&
       equalDate(game.release_dates[0].human) &&
-      equalDate(game.release_dates[0].human) >
-        equalDate(parameter)
+      equalDate(game.release_dates[0].human) > equalDate(parameter)
   );
 };
 
@@ -21,14 +19,15 @@ export const dateFilter = (arr, parameter) => {
 export const ratingFilter = (arr, parameter) =>
   arr.filter((game) => game.rating && game.rating > parameter);
 
+// age rating
+export const pegiRatingFilter = (arr, parameter) =>
+  arr.filter((game) => game.age_ratings && game.age_ratings[0].rating > parameter);
+
 // genre
 export const genreFilter = (arr, parameter) => {
   let result = [];
   arr.forEach((game) => {
-    if (
-      game.genres &&
-      arrOfObjToTextArr(game.genres).includes(parameter)
-    ) {
+    if (game.genres && arrOfObjToTextArr(game.genres).includes(parameter)) {
       result.push(game);
     } else if (parameter === "---any---") {
       result.push(game);

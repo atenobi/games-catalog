@@ -1,8 +1,11 @@
 {
+  "homepage": "http://atenobi.github.io/games-catalog",
   "name": "games-catalog",
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -11,6 +14,7 @@
     "@redux-devtools/extension": "^3.2.2",
     "@reduxjs/toolkit": "^1.8.2",
     "axios": "^0.27.2",
+    "gh-pages": "^4.0.0",
     "moment": "^2.29.3",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",

@@ -2,3 +2,19 @@
     width: 90%;
     margin: 0 auto 0;
 }
+
+.home-page--title {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 80px;
+    padding: 15px;
+    background-color: #012a62;
+}
+
+.home-page--art {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}

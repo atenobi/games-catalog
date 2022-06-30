@@ -5,7 +5,18 @@ import FilterInputs from "./filterInputs/FilterInputs";
 import SearchedGamesList from "../searchedGameList/SearchedGamesList";
 
 // js filters
-import { dateFilter, ratingFilter, genreFilter, platformFilter, engineFilter, gameModeFilter } from "../../utils/filters";
+import {
+  dateFilter,
+  ratingFilter,
+  pegiRatingFilter,
+  genreFilter,
+  platformFilter,
+  engineFilter,
+  gameModeFilter,
+} from "../../utils/filters";
+
+// js functions
+import { addGames } from "../../utils/addRemoveGames";
 
 const SearchingFilter = () => {
   const [inputsVisibility, setInputsVisibility] = useState("hidden-el");
@@ -47,7 +58,7 @@ const SearchingFilter = () => {
     fetch("/games_api/games/", {
       method: "POST",
       headers: apiHeaders,
-      body: `fields id, name, release_dates.human, rating, game_engines.name, summary, cover.url, genres.name, platforms.name, game_modes.name, url;
+      body: `fields id, name, release_dates.human, rating, age_ratings.rating, game_engines.name, summary, cover.url, genres.name, platforms.name, game_modes.name, url;
         search "${gameName}";
         limit 500;`,
     })
@@ -64,17 +75,19 @@ const SearchingFilter = () => {
 
     let dateFiltered = [];
     let ratingFiltered = [];
+    let ageRatingFiltered = [];
     let genresFiltered = [];
     let platformFiltered = [];
-    let engineFiltered =[];
+    let engineFiltered = [];
     let gameModesFiltered = [];
 
     dateFiltered = [...dateFilter(copy, params.gameReleasedate)];
     ratingFiltered = [...ratingFilter(dateFiltered, params.gameRating)];
-    genresFiltered = [...genreFilter(ratingFiltered, params.gameGenre)];
+    ageRatingFiltered = [...pegiRatingFilter(ratingFiltered, params.gamePegi)];
+    genresFiltered = [...genreFilter(ageRatingFiltered, params.gameGenre)];
     platformFiltered = [...platformFilter(genresFiltered, params.gamePlatform)];
     engineFiltered = [...engineFilter(platformFiltered, params.gameEngine)];
-    gameModesFiltered = [...gameModeFilter(engineFiltered, params.gameMode)]
+    gameModesFiltered = [...gameModeFilter(engineFiltered, params.gameMode)];
 
     result = [...gameModesFiltered];
     setFiltredGamesArray([...result]);
@@ -83,12 +96,6 @@ const SearchingFilter = () => {
   useEffect(() => {
     gamesFilter(searchedGamesArray, userFilterSearchParams);
   }, [userFilterSearchParams]);
-
-  const userFilterSearchSubmitHandler = () => {
-    console.log(searchedGamesArray);
-    console.log(filtredGamesArray);
-    console.log(userFilterSearchParams);
-  };
 
   return (
     <div className="searching-filters__own-container">
@@ -120,13 +127,16 @@ const SearchingFilter = () => {
       {/* child filters inputs */}
       <div className={inputsVisibility}>
         <FilterInputs
-          searchSubmit={(e) => userFilterSearchSubmitHandler(e)}
           searchParams={setUserFilterSearchParams}
         />
       </div>
 
       {searchedGamesArray.length > 0 && (
-        <SearchedGamesList searchedGamesArray={filtredGamesArray} addButton={true} />
+        <SearchedGamesList
+          searchedGamesArray={filtredGamesArray}
+          gamesAction={addGames}
+          sign={"✓"}
+        />
       )}
     </div>
   );

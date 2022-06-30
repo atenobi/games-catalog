@@ -1,6 +1,11 @@
 import React from "react";
 import { useState } from "react";
 
+// redux imports
+import { useDispatch } from "react-redux";
+// actions
+import { setUser } from "../../../redux/actions";
+
 //router
 import { useNavigate } from "react-router-dom";
 
@@ -10,10 +15,11 @@ import RegisterWith from "../registerWith/RegisterWith";
 // js functions
 import { checkMailPassword } from "../../../utils/userSingIn";
 
-// array of users
+// array of users imitation of data base (fetching users)
 import { usersArray } from "../../../constants/usersArray";
 
 const SingIn = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [insertedMail, setInsertedMail] = useState("");
   const [insertedPass, setInsertedPass] = useState("");
@@ -26,6 +32,13 @@ const SingIn = () => {
     if (!(checkMailPassword(usersArray, insertedMail, insertedPass).status)) {
       navigate("/join");
     } else {
+      dispatch(
+        setUser({
+          name: checkMailPassword(usersArray, insertedMail, insertedPass).name,
+          mail: checkMailPassword(usersArray, insertedMail, insertedPass).mail,
+          pass: checkMailPassword(usersArray, insertedMail, insertedPass).pass,
+        })
+      );
       navigate("/");
     }
   };

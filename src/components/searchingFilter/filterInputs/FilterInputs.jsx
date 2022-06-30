@@ -13,7 +13,8 @@ import {
 // calendar input
 import Calendar from "../../calendar/Calendar";
 
-const FilterInputs = ({ searchSubmit, searchParams }) => {
+const FilterInputs = ({ 
+   searchParams }) => {
   const [calendarStatus, setCalendarStatus] = useState(false);
   const [calButtonText, setCalButtonTex] = useState("choose");
 
@@ -28,16 +29,6 @@ const FilterInputs = ({ searchSubmit, searchParams }) => {
 
   const valueSaver = (e, setter) => {
     return setter(e.target.value);
-  };
-
-  const userCanselHandler = () => {
-    setReleaseDate("");
-    setGenre("");
-    setPlatform("");
-    setEngine("");
-    setPegi("");
-    setGameMode("");
-    setRating("");
   };
 
   const calendarActivate = (e) => {
@@ -162,22 +153,11 @@ const FilterInputs = ({ searchSubmit, searchParams }) => {
           />
         </div>
       </div>
-
-      <button
-        className="filter-inputs__button"
-        onClick={() => userCanselHandler()}
-      >
-        CANSEL
-      </button>
-      <button className="filter-inputs__button" onClick={() => searchSubmit()}>
-        SEARCH
-      </button>
     </div>
   );
 };
 
 FilterInputs.propTypes = {
-  searchSubmit: propTypes.func.isRequired,
   searchParams: propTypes.func.isRequired,
 };
 

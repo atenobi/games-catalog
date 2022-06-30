@@ -17,6 +17,7 @@ function App() {
   const user = useSelector(selectUsers);
   
   return (
+    <>
     <Router>
       <nav className="app-nav__link-container">
         <Link to="/" className="app-nav__link">
@@ -52,6 +53,9 @@ function App() {
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
+
+    </>
+    
   );
 }
 

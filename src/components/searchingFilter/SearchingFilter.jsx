@@ -97,12 +97,6 @@ const SearchingFilter = () => {
     gamesFilter(searchedGamesArray, userFilterSearchParams);
   }, [userFilterSearchParams]);
 
-  const userFilterSearchSubmitHandler = () => {
-    console.log(searchedGamesArray);
-    console.log(filtredGamesArray);
-    console.log(userFilterSearchParams);
-  };
-
   return (
     <div className="searching-filters__own-container">
       <div className="searching-filters__container">
@@ -133,7 +127,6 @@ const SearchingFilter = () => {
       {/* child filters inputs */}
       <div className={inputsVisibility}>
         <FilterInputs
-          searchSubmit={(e) => userFilterSearchSubmitHandler(e)}
           searchParams={setUserFilterSearchParams}
         />
       </div>

@@ -9,11 +9,9 @@ import { selectTopGames } from "../../redux/selectors";
 
 // js functions
 import { removeGame } from "../../utils/addRemoveGames";
-import { clearTopGames } from "../../redux/actions";
 
 const UserGamesPage = () => {
   const addedGames = useSelector(selectTopGames);
-  console.log(addedGames);
 
   return (
     <div className="user-games-page__container">

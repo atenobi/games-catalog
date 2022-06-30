@@ -20,8 +20,18 @@ export const ratingFilter = (arr, parameter) =>
   arr.filter((game) => game.rating && game.rating > parameter);
 
 // age rating
-export const pegiRatingFilter = (arr, parameter) =>
-  arr.filter((game) => game.age_ratings && game.age_ratings[0].rating > parameter);
+export const pegiRatingFilter = (arr, parameter) => {
+  let result = [];
+  arr.forEach((game) => {
+  if ( game.age_ratings && game.age_ratings[0].rating < parameter) {
+    result.push(game);
+  } else if (parameter === "---any---") {
+    result.push(game);
+  }
+});
+  return result;
+};
+  
 
 // genre
 export const genreFilter = (arr, parameter) => {

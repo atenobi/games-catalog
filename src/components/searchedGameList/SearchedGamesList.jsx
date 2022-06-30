@@ -53,7 +53,7 @@ const SearchedGamesList = ({ searchedGamesArray, gamesAction, sign }) => {
               {game.cover && (
                 <img
                   className="searched-games__game-card--image"
-                  src={`https:${game.cover.url}`}
+                  src={`https:${game.cover.url.replace('t_thumb', "t_cover_big")}`}
                   alt="img_cover"
                 />
               )}

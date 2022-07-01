@@ -1,0 +1,76 @@
+@use "./styles/colors";
+
+@import "../src/styles/components/homePage.scss";
+@import "../src/styles/components/gamesCatalog.scss";
+@import "../src/styles/components/errorPage.scss";
+@import "../src/styles/components/singInPage.scss";
+@import "../src/styles/components/registerWith.scss";
+@import "../src/styles/components/searchingFilters.scss";
+@import "../src/styles/components/filterInputs.scss";
+@import "../src/styles/components/calendar.scss";
+@import "../src/styles/components/searchedGamesList.scss";
+@import "../src/styles/components/userGamesPage.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.hidden-el {
+  display: none;
+}
+
+.hidden_element {
+  display: none;
+  border: none;
+  outline: none;
+}
+
+// fonts
+.font-regular {
+  font-size: 20px;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 18px;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 15px;
+  }
+}
+
+.font-secondary {
+  font-size: 16px;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 15px;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.app-nav__link-container {
+  width: 90%;
+  margin: 0 auto 0;
+  padding: 35px;
+  background-color: colors.$primary-dark;
+  display: flex;
+  justify-content: space-around;
+
+  .app-nav__link {
+    text-decoration: none;
+    color: colors.$general-white;
+    &:hover {
+      color: colors.$primary;
+    }
+  }
+}
+
+// @media only screen and (max-width: 1200px) {
+
+// }

@@ -1,0 +1,75 @@
+@use "../colors";
+
+
+.searching-filters__own-container {
+  border-bottom: 2px solid colors.$grey-100;
+
+  .searching-filters__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px auto;
+    padding: 0 0 10px 20px;
+
+    @media only screen and (max-width: 480px) {
+      flex-direction: column;
+      padding: 10px 0 0 0;
+    }
+
+    .searching-filters__title {
+      display: inline-block;
+      flex-grow: 1;
+      @media only screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .searching-filters__input {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid colors.$grey-100;
+      flex-grow: 1;
+      @media only screen and (max-width: 480px) {
+        text-align: center;
+      }
+    }
+
+    .searching-filters__serch-name-button {
+      border: none;
+      background-color: colors.$general-white;
+      color: colors.$primary;
+      margin-right: 10px;
+      padding: 10px;
+      &:hover {
+        color: colors.$primary-dark;
+      }
+      @media only screen and (max-width: 480px) {
+        margin: 10px 0 10px 0;
+      }
+    }
+
+    .searching-filters__button {
+      width: 10%;
+      border: none;
+      background-color: colors.$general-white;
+      font-weight: 600;
+      color: colors.$grey-100;
+      cursor: pointer;
+      &:hover {
+        border-top: 1px solid colors.$general-white;
+        color: colors.$grey-200;
+      }
+
+      @media only screen and (max-width: 768px) {
+        width: 20%;
+      }
+      @media only screen and (max-width: 480px) {
+        width: 100%;
+      }
+    }
+
+    .searching-filters__inputs {
+      display: block;
+    }
+  }
+}

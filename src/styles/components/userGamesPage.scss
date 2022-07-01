@@ -1,0 +1,15 @@
+@use "../colors";
+
+.user-games-page__container {
+    display: block;
+    margin: 20px auto;
+    width: 90%;
+    
+    .user-games-page--title {
+        font-size: 25px;
+        text-align: center;
+        color: colors.$primary-dark;
+        margin: 50px auto;
+    }
+}
+

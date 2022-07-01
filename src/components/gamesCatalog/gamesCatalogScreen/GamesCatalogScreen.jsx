@@ -6,7 +6,7 @@ import {imageLinkClearFu} from '../../../utils/imageCleare';
 
 const GamesCatalogScreen = ({ array }) => {
     return (
-        <div className="games-catalog__games-container">
+        <div className="games-catalog__games-container width-100">
         {array.map((game) => (
           <div key={game.id} className="games-catalog__games-card">
             <img

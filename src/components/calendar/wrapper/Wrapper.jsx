@@ -39,28 +39,28 @@ const Wrapper = ({
 
   return (
     <div className="calendar_wrapper">
-      <div className="calendar-wrapper__buttons-container">
+      <div className="calendar-wrapper__buttons-container width-100">
         <button
           type="submit"
-          className="text_lg calendar_wrapper_button"
+          className="calendar_wrapper_button"
           onClick={monthMinusPlus}
         >
           {"<"}
         </button>
 
-        <div className="calendar_wrapper__head text_lg">
+        <div className="calendar_wrapper__head">
           {monthText} {curYear}
         </div>
         <button
           type="submit"
-          className="text_lg calendar_wrapper_button"
+          className="calendar_wrapper_button"
           onClick={monthButtonPlus}
         >
           {">"}
         </button>
       </div>
       <table>
-        <thead className="text_md">
+        <thead>
           <tr>
             {week.map((el) => (
               <td className="calendar_wrapper_head_item" key={el}>
@@ -69,7 +69,7 @@ const Wrapper = ({
             ))}
           </tr>
         </thead>
-        <tbody className="calendar_wrapper__body text_md">
+        <tbody className="calendar_wrapper__body">
           {days.map((weekArr) => (
             <tr key={weekArr}>
               {weekArr.map((dayNum, index) => (

@@ -1,5 +1,5 @@
 import moment from 'moment';
-import {date} from '../../../constants/date';
+import {date} from '../../src/constants/date';
 
 const wrapperBody = (m, y, arrayDay) => {
   const dayOfWeek = 7;

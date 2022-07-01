@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 // components
@@ -20,18 +20,18 @@ function App() {
     <>
     <Router>
       <nav className="app-nav__link-container">
-        <Link to="/" className="app-nav__link">
+        <Link to="/" className="app-nav__link font-regular">
           {" "}
           DISCOVERY{" "}
         </Link>
 
         {!user[1] && (
           <>
-            <Link to="/sing" className="app-nav__link">
+            <Link to="/sing" className="app-nav__link font-regular">
               Sing In
             </Link>
 
-            <Link to="/join" className="app-nav__link">
+            <Link to="/join" className="app-nav__link font-regular">
               Join Us
             </Link>
           </>

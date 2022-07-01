@@ -26,7 +26,7 @@ const SearchedGamesList = ({ searchedGamesArray, gamesAction, sign }) => {
   });
 
   return (
-    <div className="searched-games-list__container">
+    <div className="searched-games-list__container width-100">
       {searchedGamesArray.map((game) => {
         return (
           <div key={game.id} className="searched-games-list__game-card">

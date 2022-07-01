@@ -28,11 +28,11 @@ const GamesCatalog = () => {
   // console.log(topGamesSelector);
 
   return (
-    <div className="games-catalog__container">
+    <div className="games-catalog__container width-100">
       {/* top games list */}
       <button
         onClick={() => refreshGames()}
-        className="games-catalog__refresh--button"
+        className="games-catalog__refresh--button font-regular"
       >
         Refresh top-games
       </button>

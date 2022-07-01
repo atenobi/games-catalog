@@ -98,8 +98,8 @@ const SearchingFilter = () => {
   }, [userFilterSearchParams]);
 
   return (
-    <div className="searching-filters__own-container">
-      <div className="searching-filters__container">
+    <div className="searching-filters__own-container width-100">
+      <div className="searching-filters__container width-100">
         <p className="searching-filters__title">Filters</p>
 
         <input
@@ -111,7 +111,7 @@ const SearchingFilter = () => {
 
         <button
           onClick={() => userSearchSubmitHandler()}
-          className="searching-filters__serch-name-button"
+          className="searching-filters__serch-name-button font-secondary"
         >
           SEARCH BY NAME
         </button>

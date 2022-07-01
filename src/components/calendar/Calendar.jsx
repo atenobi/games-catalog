@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 
 // components
 import Wrapper from "./wrapper/Wrapper";
-import wrapperBody from "./wrapper/wrapperBody";
+
+// js function
+import calendar from "../../utils/calendar";
 
 // constants
 import { date } from "../../constants/date";
@@ -14,7 +16,7 @@ const Calendar = ({ activeWrapper, setReleaseDate }) => {
   const [year, setYear] = useState(date.currentYear);
   const arrayDay = [[], [], [], [], [], []];
 
-  wrapperBody(month, year, arrayDay);
+  calendar(month, year, arrayDay);
 
   useEffect(() => {
     setReleaseDate(dateInput);

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const RegisterWith = ({ titleKeyWord }) => {
   return (
     <div className="register-with__container">
-      <h1 className="register-with__title">
+      <h1 className="register-with__title font-secondary">
         {" "}
         ------------- {titleKeyWord} With -------------{" "}
       </h1>

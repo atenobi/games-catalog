@@ -5,14 +5,9 @@ export const usersArray = [
     pass: "User001",
   },
   {
-    name: "max",
-    mail: "atenobi@mail.ru",
-    pass: "Max001",
-  },
-  {
-    name: "Maksym",
-    mail: "random@gmail.com",
-    pass: "Pass001"
+    name: "MaksymZhukov",
+    mail: "maks_zhukov_97@mail.ru",
+    pass: "Pass97"
   },
   {
     name: "Vasia",

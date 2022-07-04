@@ -1,9 +1,12 @@
 import axios from "axios";
 
+export const clientId = "r8ndcz4yox3p6e5ndgzrhlmbsharhk";
+export const authorization = "Bearer 19bj2thdtj93gj9en7lccpcz4hirsu";
+
 let api = axios.create({
   headers: {
-    "Client-ID": "r8ndcz4yox3p6e5ndgzrhlmbsharhk",
-    Authorization: "Bearer 19bj2thdtj93gj9en7lccpcz4hirsu",
+    "Client-ID": clientId,
+    Authorization: authorization,
   },
 });
 

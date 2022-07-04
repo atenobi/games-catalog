@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 //router
 import { useNavigate } from "react-router-dom";
@@ -7,13 +7,13 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 // actions
-import { setUser } from "../../../redux/actions";
+import { setUser } from "../../../redux/user/userActions";
 
 // child components
-import RegisterWith from "../registerWith/RegisterWith";
+import RegisterWith from "../RegisterWith/RegisterWith";
 
-// js functions
-import { nameVerify, mailVerify, passVerify } from "../../../utils/userVerify";
+// js functions (services)
+import { nameVerify, mailVerify, passVerify } from "../../../services/userVerify";
 
 const JoinUs = () => {
   const navigate = useNavigate();

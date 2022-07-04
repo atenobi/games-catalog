@@ -11,7 +11,7 @@ import {
 } from "../../../constants/filterSettings";
 
 // calendar input
-import Calendar from "../../calendar/Calendar";
+import Calendar from "../../Calendar/Calendar";
 
 const FilterInputs = ({ 
    searchParams }) => {

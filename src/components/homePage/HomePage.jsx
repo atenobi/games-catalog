@@ -2,10 +2,10 @@ import React from "react";
 
 // redux
 import { useSelector } from "react-redux/es/exports";
-import { selectUsers } from "../../redux/selectors";
+import { selectUsers } from "../../redux/user/userSelector";
 
 // components
-import GamesCatalog from "../gamesCatalog/GamesCatalog";
+import GamesCatalog from "../GamesCatalog/GamesCatalog";
 import SearchingFilter from "../searchingFilter/SearchingFilter";
 
 

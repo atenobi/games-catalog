@@ -3,9 +3,9 @@ import propTypes from "prop-types";
 
 // redux
 import { useDispatch } from "react-redux/es/hooks/useDispatch";
-import { clearTopGames, setTopGames } from "../../redux/actions";
+import { clearTopGames, setTopGames } from "../../redux/topGames/topGameAction";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import { selectTopGames } from "../../redux/selectors";
+import { selectTopGames } from "../../redux/topGames/topGameSelector";
 
 const SearchedGamesList = ({ searchedGamesArray, gamesAction, sign }) => {
   const gameDispatch = useDispatch();
@@ -18,6 +18,22 @@ const SearchedGamesList = ({ searchedGamesArray, gamesAction, sign }) => {
       e.target.textContent = text.slice(0, 200);
     }
   };
+
+  const clickHandler = (game,state) => {
+    if (gamesAction.functionType = "add") {
+      gameDispatch(setTopGames(gamesAction(
+        game,
+        state,
+      ).game));
+    } else if (gamesAction.functionType = "remove") {
+      gameDispatch(clearTopGames(gamesAction(
+        game,
+        state,
+      ).gameId));
+    }
+  }
+
+  // dispatcher(clear(game.id));
 
   const ids = [];
 
@@ -82,17 +98,9 @@ const SearchedGamesList = ({ searchedGamesArray, gamesAction, sign }) => {
 
             <button
               className="searched-games__game-card__game-page-button"
-              onClick={() =>
-                gamesAction(
-                  game,
-                  stateGames,
-                  gameDispatch,
-                  setTopGames,
-                  clearTopGames
-                )
-              }
+              onClick={() => clickHandler(game, stateGames)}
             >
-            {(ids.includes(game.id) ? `${sign}` : "+")}
+              {(ids.includes(game.id) ? `${sign}` : "+")}
             </button>
           </div>
         );

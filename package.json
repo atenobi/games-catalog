@@ -1,5 +1,4 @@
 {
-
   "homepage": "/",
   "name": "games-catalog",
   "private": true,
@@ -15,6 +14,7 @@
     "@redux-devtools/extension": "^3.2.2",
     "@reduxjs/toolkit": "^1.8.2",
     "axios": "^0.27.2",
+    "camelcase-keys": "^8.0.1",
     "moment": "^2.29.3",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",

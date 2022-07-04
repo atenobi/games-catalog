@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 // components
-import Wrapper from "./wrapper/Wrapper";
+import Wrapper from "./Wrapper/Wrapper";
 
 // js function
-import calendar from "../../utils/calendar";
+import calendar from "../../services/calendar";
 
 // constants
 import { date } from "../../constants/date";

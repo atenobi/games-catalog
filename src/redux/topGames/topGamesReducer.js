@@ -1,5 +1,5 @@
-import { SET_TOP_GAMES } from "./actionTypes";
-import { CLEAR_TOP_GAMES } from "./actionTypes";
+import { SET_TOP_GAMES } from "../actionTypes";
+import { CLEAR_TOP_GAMES } from "../actionTypes";
 
 const defaultState = {
   topGames: [],

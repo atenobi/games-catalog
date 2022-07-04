@@ -4,16 +4,16 @@ import { useState } from "react";
 // redux imports
 import { useDispatch } from "react-redux";
 // actions
-import { setUser } from "../../../redux/actions";
+import { setUser } from "../../../redux/user/userActions";
 
 //router
 import { useNavigate } from "react-router-dom";
 
 // child components
-import RegisterWith from "../registerWith/RegisterWith";
+import RegisterWith from "../RegisterWith/RegisterWith";
 
 // js functions
-import { checkMailPassword } from "../../../utils/userSingIn";
+import { checkMailPassword } from "../../../services/userSingIn";
 
 // array of users imitation of data base (fetching users)
 import { usersArray } from "../../../constants/usersArray";

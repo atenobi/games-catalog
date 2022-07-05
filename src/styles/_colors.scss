@@ -7,12 +7,35 @@ $primary-dark: #3f51b5;
 $grey-100: #c6c6c6;
 $grey-200: #868484;
 $grey-300: #716d6d;
-$btn-red-bg-light: #d74343;
-$btn-red-bg-dark: #a23333;
+
+// status colors
 $error-red: #ff5c5c;
 $sucsess-green: #20ce27;
+
+// social media colors
 $facebook: #3b5998;
 $google: #e74c3d;
 $twitter: #3698d9;
+
+// home page warning title
 $home-title: #ced9d0;
 $home-title-outlight: #f643ff;
+
+// buttons singIn + joinUs
+// main
+$btn-red-bg-light: #d74343;
+// hover
+$btn-red-bg-dark: #a23333;
+
+// nanigation links container color
+$main-nav-link-container: #3f51b5;
+// nanigation links colors
+$main-nav-link: #ffffff;
+$main-nav-link-hover: #79b7ff;
+
+// buttons / links
+$button-main: #79b7ff;
+$button-hover: #3f51b5;
+
+// game card shadow
+$game-card-shadow: #77b5ec;

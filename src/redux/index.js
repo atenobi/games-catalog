@@ -3,12 +3,12 @@ import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 
-import userInfo from "../redux/user/userReducer";
-import topGames from "./topGames/topGamesReducer";
+import userInfo from "@/redux/user/userReducer";
+import userGames from "@/redux/userGames/userGamesReducer";
 
 const rootReducer = combineReducers({
   users: userInfo,
-  topGames: topGames,
+  userGames: userGames,
 });
 
 export const store = createStore(

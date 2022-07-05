@@ -1,3 +1,3 @@
 export const SET_USER = "SET_USER";
-export const SET_TOP_GAMES = "SET_TOP_GAMES";
-export const CLEAR_TOP_GAMES = "CLEAR_TOP_GAMES";
+export const SET_USER_GAMES = "SET_USER_GAMES";
+export const CLEAR_USER_GAMES = "CLEAR_USER_GAMES";

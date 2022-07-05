@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 
 // child component
-import FilterInputs from "./FilterInputs/FilterInputs";
-import SearchedGamesList from "../SearchedGameList/SearchedGamesList";
+import FilterInputs from "@/components/FilterInputs/FilterInputs";
+
+//screens
+import SearchedGamesList from "@/screens/SearchedGameList/SearchedGamesList";
 
 // js functions
-import { addGames } from "../../services/addRemoveGames";
-import { getGamesByName } from "../../api/getGamesByName";
-import { gamesFilter } from "../../services/gamesFilter";
+import { addGames } from "@/services/addGames";
+import { getGamesByName } from "@/api/getGamesByName";
+import { gamesFilter } from "@/services/gamesFilter";
 
 const SearchingFilter = () => {
   const [inputsVisibility, setInputsVisibility] = useState("hidden-el");

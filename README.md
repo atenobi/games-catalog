@@ -1,15 +1,15 @@
 # Used tools:
 
 1. Vite(boundler),
- 2. JS,
-  3. React,
-   4. Redux,
-    5. HTML,
-     6. CSS,
-      7. SCSS,
-       8. GIT,
-        9. GitHub
-         10. IGDB.API
+2. JS,
+3. React,
+4. Redux,
+5. HTML,
+6. CSS,
+7. SCSS,
+8. GIT,
+9. GitHub
+10. IGDB.API
 
 # Scripts:
 

@@ -4,7 +4,7 @@ import PropTypes, { arrayOf, number, string } from "prop-types";
 // constants
 import { date } from "../../../constants/date";
 
-const Wrapper = ({
+const CalandarWrapper = ({
   days,
   week,
   curDay,
@@ -110,7 +110,7 @@ const Wrapper = ({
   );
 };
 
-Wrapper.propTypes = {
+CalandarWrapper.propTypes = {
   days: PropTypes.arrayOf(arrayOf(number)).isRequired,
   week: PropTypes.arrayOf(string).isRequired,
   curMonth: PropTypes.number.isRequired,
@@ -123,4 +123,4 @@ Wrapper.propTypes = {
   monthSetter: PropTypes.func.isRequired,
 };
 
-export default Wrapper;
+export default CalandarWrapper;

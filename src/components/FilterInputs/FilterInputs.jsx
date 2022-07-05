@@ -8,10 +8,10 @@ import {
   gameEngines,
   pegiRating,
   gameModes,
-} from "../../../constants/filterSettings";
+} from "@/constants/filterSettings";
 
 // calendar input
-import Calendar from "../../Calendar/Calendar";
+import Calendar from "@/components/Calendar/Calendar";
 
 const FilterInputs = ({ 
    searchParams }) => {

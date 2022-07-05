@@ -36,11 +36,11 @@
     .searching-filters__serch-name-button {
       border: none;
       background-color: colors.$general-white;
-      color: colors.$primary;
+      color: colors.$button-main;
       margin-right: 10px;
       padding: 10px;
       &:hover {
-        color: colors.$primary-dark;
+        color: colors.$button-hover;
       }
       @media only screen and (max-width: 480px) {
         margin: 10px 0 10px 0;

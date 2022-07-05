@@ -1,17 +1,17 @@
 import React from "react";
 
 // child components
-import SearchedGamesList from "../SearchedGameList/SearchedGamesList";
+import SearchedGamesList from "@/screens/SearchedGameList/SearchedGamesList";
 
 // redux
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import { selectTopGames } from "../../redux/topGames/topGameSelector";
+import { selectUserGames } from "@/redux/userGames/userGameSelector";
 
 // js functions
-import { removeGame } from "../../services/addRemoveGames";
+import { removeGame } from "@/services/removeGames";
 
 const UserGamesPage = () => {
-  const addedGames = useSelector(selectTopGames);
+  const addedGames = useSelector(selectUserGames);
 
   return (
     <div className="user-games-page__container">

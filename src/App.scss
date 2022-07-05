@@ -1,15 +1,21 @@
-@use "./styles/colors";
+@use "@/styles/colors";
 
-@import "../src/components/homePage/homePage.scss";
-@import "../src/components/gamesCatalog/gamesCatalog.scss";
-@import "../src/components/errorPage/errorPage.scss";
-@import "../src/components/SingInPage/singInPage.scss";
-@import "../src/components/SingInPage/registerWith/registerWith.scss";
-@import "../src/components/searchedGameList/searchedGamesList.scss";
-@import "../src/components/searchingFilter/filterInputs/filterInputs.scss";
-@import "../src/components/calendar/calendar.scss";
-@import "../src/components/userGamesPage/userGamesPage.scss";
-@import "../src/components/searchingFilter/searchingFilters.scss";
+// pages
+@import "@/pages/HomePage/homePage.scss";
+@import "@/pages/errorPage/errorPage.scss";
+@import "@/pages/SingInPage/singInPage.scss";
+@import "@/pages/userGamesPage/userGamesPage.scss";
+@import "@/pages/gamesCatalogPage/gamesCatalogPage.scss";
+
+// screens
+@import "@/screens/GamesCatalogScreen/gamesCatalogScreen.scss";
+@import "@/screens/searchedGameList/searchedGamesList.scss";
+
+// components
+@import "@/components/registerWith/registerWith.scss";
+@import "@/components/FilterInputs/filterInputs.scss";
+@import "@/components/calendar/calendar.scss";
+@import "@/components/searchingFilter/searchingFilters.scss";
 
 * {
   margin: 0;
@@ -58,15 +64,15 @@
   width: 90%;
   margin: 0 auto 0;
   padding: 35px;
-  background-color: colors.$primary-dark;
+  background-color: colors.$main-nav-link-container;
   display: flex;
   justify-content: space-around;
 
   .app-nav__link {
     text-decoration: none;
-    color: colors.$general-white;
+    color: colors.$main-nav-link;
     &:hover {
-      color: colors.$primary;
+      color: colors.$main-nav-link-hover;
     }
   }
 }

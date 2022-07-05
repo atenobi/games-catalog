@@ -1,4 +1,4 @@
-@use "../../styles/colors";
+@use "@/styles/colors";
 
 .searched-games-list__container {
   display: flex;
@@ -12,7 +12,7 @@
     padding: 15px;
     border: 2px solid colors.$grey-100;
     border-radius: 5px;
-    box-shadow: 0 0 10px colors.$primary-200;
+    box-shadow: 0 0 10px colors.$game-card-shadow;
 
     @media only screen and (max-width: 768px) {
       width: 100%;
@@ -78,25 +78,25 @@
 
   .searched-games__game-card__game-page-link {
     text-decoration: none;
-    color: colors.$primary;
-    border: 1px solid colors.$primary-dark;
+    color: colors.$button-main;
+    border: 1px solid colors.$button-main;
     border-radius: 5px;
     padding: 0 10px 0px;
     margin-right: 10px;
     &:hover {
-      color: colors.$primary-dark;
-      box-shadow: 0 0 10px colors.$primary;
+      color: colors.$button-hover;
+      box-shadow: 0 0 10px colors.$button-hover;
     }
   }
 
   .searched-games__game-card__game-page-button {
     border: none;
     background-color: colors.$general-white;
-    color: colors.$primary;
+    color: colors.$button-main;
     font-weight: 800;
     font-size: 23px;
     &:hover {
-      color: colors.$primary-dark;
+      color: colors.$button-hover;
     }
   }
 }

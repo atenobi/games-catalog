@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 // api
-import { getMostPopularGames } from "../../api/getMostPopularGames";
+import { getMostPopularGames } from "@/api/getMostPopularGames";
 
 // child components
-import GamesCatalogScreen from "./GamesCatalogScreen/GamesCatalogScreen";
+import GamesCatalogScreen from "@/screens/GamesCatalogScreen/GamesCatalogScreen";
 
 const GamesCatalog = () => {
   const [games, setGames] = useState([]);

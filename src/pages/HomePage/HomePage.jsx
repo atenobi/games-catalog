@@ -2,11 +2,13 @@ import React from "react";
 
 // redux
 import { useSelector } from "react-redux/es/exports";
-import { selectUsers } from "../../redux/user/userSelector";
+import { selectUsers } from "@/redux/user/userSelector";
+
+// pages
+import GamesCatalog from "@/pages/GamesCatalogPage/GamesCatalogPage";
 
 // components
-import GamesCatalog from "../GamesCatalog/GamesCatalog";
-import SearchingFilter from "../searchingFilter/SearchingFilter";
+import SearchingFilter from "@/components/SearchingFilter/SearchingFilter";
 
 
 const HomePage = () => {

@@ -2,16 +2,17 @@ import React from "react";
 import "./App.scss";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-// components
-import HomePage from "./components/HomePage/HomePage";
-import ErrorPage from "./components/ErrorPage/ErrorPage";
-import SingIn from "./components/SingInPage/SingIn/SingIn";
-import JoinUs from "./components/SingInPage/JoinUs/JoinUs";
-import UserGamesPage from "./components/UserGamesPage/UserGamesPage";
+// pages
+import HomePage from "@/pages/HomePage/HomePage";
+import ErrorPage from "@/pages/ErrorPage/ErrorPage";
+import UserGamesPage from "@/pages/UserGamesPage/UserGamesPage";
+import SingIn from "@/pages/SingInPage/SingIn";
+import JoinUs from "@/pages/SingInPage/JoinUs";
+
 
 // redux
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import { selectUsers } from "./redux/user/userSelector";
+import { selectUsers } from "@/redux/user/userSelector";
 
 function App() {
   const user = useSelector(selectUsers);

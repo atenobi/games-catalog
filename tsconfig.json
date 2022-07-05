@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    // ...rest of the template
+    "types": ["node"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

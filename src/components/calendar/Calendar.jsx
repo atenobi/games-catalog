@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 // components
-import Wrapper from "./Wrapper/Wrapper";
+import CalendarWrapper from "./CalendarWrapper/CalendarWrapper";
 
 // js function
-import calendar from "../../services/calendar";
+import calendar from "@/services/calendar";
 
 // constants
-import { date } from "../../constants/date";
+import { date } from "@/constants/date";
 
 const Calendar = ({ activeWrapper, setReleaseDate }) => {
   const [dateInput, setDateInput] = useState(date.currentFullDate());
@@ -35,7 +35,7 @@ const Calendar = ({ activeWrapper, setReleaseDate }) => {
         />
         {activeWrapper && (
           <div>
-            <Wrapper
+            <CalendarWrapper
               days={arrayDay}
               week={date.weekArray}
               curMonth={month}

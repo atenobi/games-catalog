@@ -2,14 +2,15 @@ import React from "react";
 import propTypes from "prop-types";
 
 // redux
-import { useDispatch } from "react-redux/es/hooks/useDispatch";
-import { clearTopGames, setTopGames } from "../../redux/topGames/topGameAction";
-import { useSelector } from "react-redux/es/hooks/useSelector";
-import { selectTopGames } from "../../redux/topGames/topGameSelector";
+import { useDispatch, useSelector } from "react-redux";
+
+// redux imports
+import { clearUserGames, setUserGames } from "@/redux/userGames/userGameAction";
+import { selectUserGames } from "@/redux/userGames/userGameSelector";
 
 const SearchedGamesList = ({ searchedGamesArray, gamesAction, sign }) => {
   const gameDispatch = useDispatch();
-  const stateGames = useSelector(selectTopGames);
+  const stateGames = useSelector(selectUserGames);
 
   const showAllText = (e, text) => {
     if (text.length > 200 && e.target.textContent.length === 200) {
@@ -19,27 +20,25 @@ const SearchedGamesList = ({ searchedGamesArray, gamesAction, sign }) => {
     }
   };
 
-  const clickHandler = (game,state) => {
-    if (gamesAction.functionType = "add") {
-      gameDispatch(setTopGames(gamesAction(
-        game,
-        state,
-      ).game));
-    } else if (gamesAction.functionType = "remove") {
-      gameDispatch(clearTopGames(gamesAction(
-        game,
-        state,
-      ).gameId));
-    }
-  }
+  const clickHandler = (game, state) => {
+    const resultOfGameAction = gamesAction(game, state);
 
-  // dispatcher(clear(game.id));
+    if (resultOfGameAction.functionType === "add") {
+      gameDispatch(setUserGames(resultOfGameAction.game));
+    }
+
+    if (resultOfGameAction.functionType === "remove") {
+      gameDispatch(clearUserGames(resultOfGameAction.gameId));
+    }
+  };
 
   const ids = [];
 
-  stateGames.forEach((element) => {
-    ids.push(element.id);
-  });
+  if (stateGames.length > 0) {
+    stateGames.forEach((element) => {
+      ids.push(element.id);
+    });
+  }
 
   return (
     <div className="searched-games-list__container width-100">
@@ -69,7 +68,10 @@ const SearchedGamesList = ({ searchedGamesArray, gamesAction, sign }) => {
               {game.cover && (
                 <img
                   className="searched-games__game-card--image"
-                  src={`https:${game.cover.url.replace('t_thumb', "t_cover_big")}`}
+                  src={`https:${game.cover.url.replace(
+                    "t_thumb",
+                    "t_cover_big"
+                  )}`}
                   alt="img_cover"
                 />
               )}
@@ -100,7 +102,7 @@ const SearchedGamesList = ({ searchedGamesArray, gamesAction, sign }) => {
               className="searched-games__game-card__game-page-button"
               onClick={() => clickHandler(game, stateGames)}
             >
-              {(ids.includes(game.id) ? `${sign}` : "+")}
+              {ids.includes(game.id) ? `${sign}` : "+"}
             </button>
           </div>
         );

@@ -17,13 +17,13 @@ const HomePage = () => {
   return (
     <>
     {/* ! no forget return condition ! */}
-    {user[1] && (
+    {!user[1] && (
         <div className="home-page__own-container">
           <h1 className="home-page--title">To use the service, log in to your account or register. Have a good day!</h1>
           <img className="home-page--art" src="https://wallpapers.com/images/high/pixel-art-super-mario-7cs6zotrm4lww4oi.jpg" alt="art" />
         </div>
       )}
-      {!user[1] && (
+      {user[1] && (
         <div className="home-page__own-container">
           <SearchingFilter />
           <GamesCatalog />

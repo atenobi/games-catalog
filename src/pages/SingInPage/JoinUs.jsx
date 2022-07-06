@@ -14,6 +14,7 @@ import RegisterWith from "@/components/RegisterWith/RegisterWith";
 
 // js functions (services)
 import { nameVerify, mailVerify, passVerify } from "@/services/userVerify";
+import { pageReloader } from "../../services/pageReloader";
 
 const JoinUs = () => {
   const navigate = useNavigate();
@@ -52,10 +53,13 @@ const JoinUs = () => {
     }
 
     if (!nameVerify(inputUserName)) {
+      pageReloader(2000);
       setInfo({ status: false, text: "Please, insert you`r name." });
     } else if (!mailVerify(inputUserMail)) {
+      pageReloader(2000);
       setInfo({ status: false, text: "You`r email address is not valid." });
     } else if (!passVerify(inputUserPass)) {
+      pageReloader(2000);
       setInfo({
         status: false,
         text: "The password must contain at least 6 characters, uppercase and lowercase Latin letters and numbers.",

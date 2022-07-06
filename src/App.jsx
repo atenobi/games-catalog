@@ -25,8 +25,8 @@ function App() {
           {" "}
           DISCOVERY{" "}
         </Link>
-
-        {!user[1] && (
+{/* ! no forget return condition ! */}
+        {user[1] && (
           <>
             <Link to="/sing" className="app-nav__link font-regular">
               Sing In

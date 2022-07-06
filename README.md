@@ -48,7 +48,7 @@ Games-catalog for searching different games.
 1. Pagination?
 2. Tests?
 
-3. Fix some problems (forms have no reaction on enter button / forms not cleans after unvalid insertings)
+3. Fix some problems (forms have no reaction on enter button)
 
 # Problems:
 

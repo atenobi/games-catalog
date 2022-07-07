@@ -5,6 +5,7 @@ export const getGamesByName = async (name) => {
     method: "POST",
     mode: "no-cors",
     headers: {
+      "access-control-allow-origin" : "*",
       "Client-ID": "r8ndcz4yox3p6e5ndgzrhlmbsharhk",
       authorization: "Bearer 19bj2thdtj93gj9en7lccpcz4hirsu",
     },

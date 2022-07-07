@@ -21,7 +21,7 @@ function App() {
     <>
     <Router>
       <nav className="app-nav__link-container">
-        <Link to="/" className="app-nav__link font-regular">
+        <Link to="/games-catolog" className="app-nav__link font-regular">
           {" "}
           DISCOVERY{" "}
         </Link>
@@ -45,7 +45,7 @@ function App() {
         )}
       </nav>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/games-catolog" element={<HomePage />} />
         <Route path="/user" element={<UserGamesPage />} />
 
         <Route path="/sing" element={<SingIn />} />

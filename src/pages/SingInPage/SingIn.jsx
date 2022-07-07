@@ -39,7 +39,7 @@ const SingIn = () => {
           pass: checkMailPassword(usersArray, insertedMail, insertedPass).pass,
         })
       );
-      navigate("/");
+      navigate("/games-catalog");
     }
   };
 

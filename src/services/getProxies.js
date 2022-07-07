@@ -25,5 +25,5 @@ export async function getProxies(n) {
     return false;
   });
   result = successfullResponses.map((r) => r.value.data.proxy);
-  return result.json();
+  return result;
 }

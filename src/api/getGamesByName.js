@@ -1,35 +1,11 @@
 import axios from "axios";
+import { getProxies } from "@/services/getProxies";
 
-async function getProxies(n) {
-  var options = {
-    method: "GET",
-    url: "https://ephemeral-proxies.p.rapidapi.com/v1/proxy",
-    headers: {
-      "x-rapidapi-host": "ephemeral-proxies.p.rapidapi.com",
-      "x-rapidapi-key": "37cc2137c4mshe381a547fd72629p1dcd8cjsn19fd759ff090",
-    },
-  };
-  let p = [];
-  for (let i = 0; i < n; i++) {
-    p.push(axios.request(options));
-  }
-  let responses = await Promise.allSettled(p);
-  let successfullResponses = responses.filter((r) => {
-    if (r.status === "fulfilled") {
-      if (r.value.data.success) return true;
-      console.warn(r.value.data);
-    } else if (r.status === "rejected") {
-      console.warn(r);
-    }
-    return false;
-  });
-  return successfullResponses.map((r) => r.value.data.proxy);
-}
-
-console.log(getProxies(5))
 
 export const getGamesByName = async (name) => {
   // let result = [];
+
+  console.log(getProxies(3));
 
   const queryParams = {
     headers: {

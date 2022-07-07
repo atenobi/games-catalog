@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export async function getProxies(n) {
   let  result = [];
   var options = {

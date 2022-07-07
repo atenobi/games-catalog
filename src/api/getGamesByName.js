@@ -1,12 +1,9 @@
-import proxy from 'express-http-proxy';
-
-app.use('/api', proxy('http://example.com'))
-
 export const getGamesByName = async (name) => {
   let result = [];
 
   await fetch("https://api.igdb.com/v4/games/", {
     method: "POST",
+    mode: "no-cors",
     headers: {
       "Client-ID": "r8ndcz4yox3p6e5ndgzrhlmbsharhk",
       authorization: "Bearer 19bj2thdtj93gj9en7lccpcz4hirsu",

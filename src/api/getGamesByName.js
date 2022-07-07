@@ -24,6 +24,8 @@ export const getGamesByName = async (name) => {
       method: "GET",
       url: targetUrl,
     };
+    console.log(axios.request(options));
+    result = axios.request(options);
     return axios.request(options);
   }
 

@@ -1,7 +1,7 @@
 export const getGamesByName = async (name) => {
   let result = [];
 
-  await fetch("/games_api/games/", {
+  await fetch("https://api.igdb.com/v4/games/", {
     method: "POST",
     headers: {
       "Client-ID": "r8ndcz4yox3p6e5ndgzrhlmbsharhk",

@@ -14,7 +14,7 @@ import RegisterWith from "@/components/RegisterWith/RegisterWith";
 
 // js functions (services)
 import { nameVerify, mailVerify, passVerify } from "@/services/userVerify";
-import { pageReloader } from "../../services/pageReloader";
+import { pageReloader } from "@/services/pageReloader";
 
 const JoinUs = () => {
   const navigate = useNavigate();
@@ -49,7 +49,7 @@ const JoinUs = () => {
         })
       );
       setInfo({ status: true, text: "Everything is fine, the data is saved!" });
-      navigate("/");
+      navigate("/games-catalog");
     }
 
     if (!nameVerify(inputUserName)) {

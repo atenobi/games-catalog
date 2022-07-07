@@ -1,3 +1,7 @@
+import proxy from 'express-http-proxy';
+
+app.use('/api', proxy('http://example.com'))
+
 export const getGamesByName = async (name) => {
   let result = [];
 

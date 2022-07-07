@@ -3,9 +3,9 @@ import { getProxies } from "@/services/getProxies";
 
 
 export const getGamesByName = async (name) => {
-  // let result = [];
+  let result = [];
 
-  console.log(getProxies(3));
+  const proxyAnswer = getProxies(1)[0];
 
   const queryParams = {
     headers: {
@@ -28,12 +28,12 @@ export const getGamesByName = async (name) => {
   }
 
   hitTarget(
-    proxIp,
-    proxyPort,
+    proxyAnswer.id,
+    proxyAnswer.port,
     `https://api.igdb.com/v4/games/${JSON.stringify(queryParams)}`
   );
 
-  // return result;
+  return result;
 };
 
 // const axios = require("axios");

@@ -53,13 +53,13 @@ const JoinUs = () => {
     }
 
     if (!nameVerify(inputUserName)) {
-      pageReloader(2000);
+      pageReloader(2000, navigate("/games-catalog/join"));
       setInfo({ status: false, text: "Please, insert you`r name." });
     } else if (!mailVerify(inputUserMail)) {
-      pageReloader(2000);
+      pageReloader(2000, navigate("/games-catalog/join"));
       setInfo({ status: false, text: "You`r email address is not valid." });
     } else if (!passVerify(inputUserPass)) {
-      pageReloader(2000);
+      pageReloader(2000, navigate("/games-catalog/join"));
       setInfo({
         status: false,
         text: "The password must contain at least 6 characters, uppercase and lowercase Latin letters and numbers.",
@@ -75,14 +75,14 @@ const JoinUs = () => {
     <div className="sing-in-container">
       <div>
         <button
-          onClick={() => navigate("/sing")}
+          onClick={() => navigate("/games-catalog/sing")}
           className="sing-in-swich-button"
         >
           SING IN
         </button>
 
         <button
-          onClick={() => navigate("/join")}
+          onClick={() => navigate("/games-catalog/join")}
           className="sing-in-swich-button"
         >
           JOIN US!

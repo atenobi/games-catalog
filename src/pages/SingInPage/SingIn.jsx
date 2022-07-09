@@ -30,7 +30,7 @@ const SingIn = () => {
 
   const singInClickHandler = () => {
     if (!(checkMailPassword(usersArray, insertedMail, insertedPass).status)) {
-      navigate("/join");
+      navigate("/games-catalog/join");
     } else {
       dispatch(
         setUser({
@@ -47,13 +47,13 @@ const SingIn = () => {
     <div className="sing-in-container">
       <div>
         <button
-          onClick={() => navigate("/sing")}
+          onClick={() => navigate("/games-catalog/sing")}
           className="sing-in-swich-button"
         >
           SING IN
         </button>
         <button
-          onClick={() => navigate("/join")}
+          onClick={() => navigate("/games-catalog/join")}
           className="sing-in-swich-button"
         >
           JOIN US!

@@ -28,28 +28,28 @@ function App() {
 {/* ! no forget return condition ! */}
         {!user[1] && (
           <>
-            <Link to="/sing" className="app-nav__link font-regular">
+            <Link to="/games-catalog/sing" className="app-nav__link font-regular">
               Sing In
             </Link>
 
-            <Link to="/join" className="app-nav__link font-regular">
+            <Link to="/games-catalog/join" className="app-nav__link font-regular">
               Join Us
             </Link>
           </>
         )}
 
         {user[1] && (
-          <Link to="/user" className="app-nav__link">
+          <Link to="/games-catalog/user" className="app-nav__link">
             {user[1].name}
           </Link>
         )}
       </nav>
       <Routes>
         <Route path="/games-catalog" element={<HomePage />} />
-        <Route path="/user" element={<UserGamesPage />} />
+        <Route path="/games-catalog/user" element={<UserGamesPage />} />
 
-        <Route path="/sing" element={<SingIn />} />
-        <Route path="/join" element={<JoinUs />} />
+        <Route path="/games-catalog/sing" element={<SingIn />} />
+        <Route path="/games-catalog/join" element={<JoinUs />} />
 
         <Route path="*" element={<ErrorPage />} />
       </Routes>

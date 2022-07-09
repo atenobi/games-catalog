@@ -1,5 +1,5 @@
-export const pageReloader = async (ms, func) => {
+export const pageReloader = async (ms) => {
     return errTimeout = setTimeout(()=>{
-        func();
+        window.location.reload(true);
     }, ms)
 };

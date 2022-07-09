@@ -2,7 +2,10 @@
   "homepage": "https://atenobi.github.io/games-catalog",
   "name": "games-catalog",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

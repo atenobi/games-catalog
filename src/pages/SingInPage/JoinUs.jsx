@@ -53,12 +53,15 @@ const JoinUs = () => {
     }
 
     if (!nameVerify(inputUserName)) {
+      navigate("/games-catalog")
       pageReloader(2000, navigate("/games-catalog/join"));
       setInfo({ status: false, text: "Please, insert you`r name." });
     } else if (!mailVerify(inputUserMail)) {
+      navigate("/games-catalog")
       pageReloader(2000, navigate("/games-catalog/join"));
       setInfo({ status: false, text: "You`r email address is not valid." });
     } else if (!passVerify(inputUserPass)) {
+      navigate("/games-catalog")
       pageReloader(2000, navigate("/games-catalog/join"));
       setInfo({
         status: false,

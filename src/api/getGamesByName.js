@@ -1,13 +1,13 @@
 export const getGamesByName = async (name) => {
   let result = [];
 
-  const queryParams = {
-    fields: 'id,name,release_dates.human,rating,age_ratings.rating,game_engines.name,summary,cover.url,genres.name,platforms.name,game_modes.name,url',
-    search: `${name}`,
-    limit: '500',
-  }
+const fetchParams = {
+  fields: "?fields=id,name,release_dates.human,rating,age_ratings.rating,game_engines.name,summary,cover.url,genres.name,platforms.name,game_modes.name,url;",
+  search: `search"${name}";`,
+  limit: '&limit=500',
+}
 
-  await fetch(`https://eozcxj7i2j3mjjh.m.pipedream.net/games${queryParams}`, {
+  await fetch(`https://eozcxj7i2j3mjjh.m.pipedream.net/games${fetchParams.fields}${fetchParams.search}${fetchParams.limit}`, {
     method: "POST",
     headers: {
       "Client-ID": "r8ndcz4yox3p6e5ndgzrhlmbsharhk",

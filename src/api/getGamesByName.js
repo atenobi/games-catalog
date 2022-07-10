@@ -4,7 +4,8 @@ export const getGamesByName = async (name) => {
   const queryParams = {
     fields: 'id,name,release_dates.human,rating,age_ratings.rating,game_engines.name,summary,cover.url,genres.name,platforms.name,game_modes.name,url',
     search: `${name}`,
-    limit: 500,
+    sort: "rating desc",
+    limit: '500',
   }
 
   await fetch(`https://eozcxj7i2j3mjjh.m.pipedream.net/games${queryParams}`, {

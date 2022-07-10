@@ -65,7 +65,6 @@ const JoinUs = () => {
         text: "The password must contain at least 6 characters, uppercase and lowercase Latin letters and numbers.",
       });
     }
-
     setInputUserName("");
     setInputUserMail("");
     setInputUserPass("");

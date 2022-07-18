@@ -51,7 +51,7 @@ export const platformFilter = (arr, parameter) => {
   let result = [];
   arr.forEach((game) => {
     if (
-      // !parameter &&
+      
       game.platforms &&
       arrOfObjToTextArr(game.platforms).includes(parameter)
     ) {
@@ -68,7 +68,7 @@ export const engineFilter = (arr, parameter) => {
   let result = [];
   arr.forEach((game) => {
     if (
-      // !parameter &&
+     
       game.game_engines &&
       arrOfObjToTextArr(game.game_engines).includes(parameter)
     ) {
@@ -85,7 +85,7 @@ export const gameModeFilter = (arr, parameter) => {
   let result = [];
   arr.forEach((game) => {
     if (
-      // !parameter &&
+     
       game.game_modes &&
       arrOfObjToTextArr(game.game_modes).includes(parameter)
     ) {

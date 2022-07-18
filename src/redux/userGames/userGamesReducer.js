@@ -1,5 +1,4 @@
-import { SET_USER_GAMES } from "@/redux/actionTypes";
-import { CLEAR_USER_GAMES } from "@/redux/actionTypes";
+import { SET_USER_GAMES, CLEAR_USER_GAMES } from "./gamesActionTypes";
 
 const defaultState = {
   userGames: [],

@@ -7,11 +7,9 @@
 @import "@/pages/userGamesPage/userGamesPage.scss";
 @import "@/pages/gamesCatalogPage/gamesCatalogPage.scss";
 
-// screens
-@import "@/screens/GamesCatalogScreen/gamesCatalogScreen.scss";
-@import "@/screens/searchedGameList/searchedGamesList.scss";
-
 // components
+@import "@/components/GamesCatalogScreen/gamesCatalogScreen.scss";
+@import "@/components/searchedGameList/searchedGamesList.scss";
 @import "@/components/registerWith/registerWith.scss";
 @import "@/components/FilterInputs/filterInputs.scss";
 @import "@/components/calendar/calendar.scss";

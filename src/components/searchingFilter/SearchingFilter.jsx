@@ -4,11 +4,11 @@ import React, { useState, useEffect } from "react";
 import FilterInputs from "@/components/FilterInputs/FilterInputs";
 
 //screens
-import SearchedGamesList from "@/screens/SearchedGameList/SearchedGamesList";
+import SearchedGamesList from "@/components/SearchedGameList/SearchedGamesList";
 
 // js functions
 import { addGames } from "@/services/addGames";
-import { getGamesByName } from "@/api/getGamesByName";
+import { getGamesByName } from "@/api/getGames";
 import { gamesFilter } from "@/services/gamesFilter";
 
 const SearchingFilter = () => {

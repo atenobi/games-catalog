@@ -1,7 +1,7 @@
 import React from "react";
 
 // child components
-import SearchedGamesList from "@/screens/SearchedGameList/SearchedGamesList";
+import SearchedGamesList from "@/components/SearchedGameList/SearchedGamesList";
 
 // redux
 import { useSelector } from "react-redux/es/hooks/useSelector";

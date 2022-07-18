@@ -9,11 +9,12 @@
 
 // components
 @import "@/components/GamesCatalogScreen/gamesCatalogScreen.scss";
-@import "@/components/searchedGameList/searchedGamesList.scss";
-@import "@/components/registerWith/registerWith.scss";
+@import "@/components/SearchedGameList/searchedGamesList.scss";
+@import "@/components/RegisterWith/registerWith.scss";
 @import "@/components/FilterInputs/filterInputs.scss";
-@import "@/components/calendar/calendar.scss";
-@import "@/components/searchingFilter/searchingFilters.scss";
+@import "@/components/Calendar/calendar.scss";
+@import "@/components/SearchingFilter/searchingFilters.scss";
+@import "@/components/SwichButtons/swichButtons.scss";
 
 * {
   margin: 0;

@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 
-//router
-import { useNavigate } from "react-router-dom";
-
 // redux imports
 import { useDispatch } from "react-redux";
 
@@ -11,17 +8,17 @@ import { setUser } from "@/redux/user/userActions";
 
 // child components
 import RegisterWith from "@/components/RegisterWith/RegisterWith";
+import SwichButtons from "@/components/SwichButtons/SwichButtons";
 
 // js functions (services)
 import { nameVerify, mailVerify, passVerify } from "@/services/userVerify";
-import { pageReloader } from "@/services/pageReloader";
+
+//router
+import { useNavigate } from "react-router-dom";
 
 const JoinUs = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  //   const UsersArr = useSelector((store) => store.users);
-
+  const navigate = useNavigate();
   const [inputUserName, setInputUserName] = useState("");
   const [inputUserMail, setInputUserMail] = useState("");
   const [inputUserPass, setInputUserPass] = useState("");
@@ -35,7 +32,8 @@ const JoinUs = () => {
   const inputPassHandler = (e) => setInputUserPass(e.target.value);
 
   // send datas to redux state
-  const joinSubmitHandler = () => {
+  function submitHandler(e) {
+    e.preventDefault();
     if (
       nameVerify(inputUserName) &&
       mailVerify(inputUserMail) &&
@@ -53,85 +51,76 @@ const JoinUs = () => {
     }
 
     if (!nameVerify(inputUserName)) {
-      pageReloader(2000);
-      setInfo({ status: false, text: "Please, insert you`r name." });
+      setInfo({ status: false, text: "Please, insert you`r name."});
     } else if (!mailVerify(inputUserMail)) {
-      pageReloader(2000);
       setInfo({ status: false, text: "You`r email address is not valid." });
-    } else if (!passVerify(inputUserPass)) {  
-      pageReloader(2000);
+    } else if (!passVerify(inputUserPass)) {
       setInfo({
         status: false,
         text: "The password must contain at least 6 characters, uppercase and lowercase Latin letters and numbers.",
       });
     }
-    setInputUserName("");
-    setInputUserMail("");
-    setInputUserPass("");
-  };
+  }
 
   return (
     <div className="sing-in-container">
-      <div>
-        <button
-          onClick={() => navigate("/games-catalog/sing")}
-          className="sing-in-swich-button"
+      <SwichButtons />
+      <form onSubmit={submitHandler} className="sing-in-form">
+        <label
+          htmlFor="sing-in-join-name-input"
+          className="sing-in__label-text"
         >
-          SING IN
-        </button>
+          Name
+        </label>
+        <input
+          type="text"
+          className="sing-in-input"
+          id="sing-in-join-name-input"
+          onInput={(e) => inputNameHandler(e)}
+        />
 
-        <button
-          onClick={() => navigate("/games-catalog/join")}
-          className="sing-in-swich-button"
+        <label
+          htmlFor="sing-in-join-mail-input"
+          className="sing-in__label-text"
         >
-          JOIN US!
-        </button>
-      </div>
+          Email address
+        </label>
+        <input
+          type="mail"
+          className="sing-in-input"
+          id="sing-in-join-mail-input"
+          onInput={(e) => inputMailHandler(e)}
+        />
 
-      <label htmlFor="sing-in-join-name-input" className="sing-in__label-text">
-        Name
-      </label>
-      <input
-        type="text"
-        className="sing-in-input"
-        id="sing-in-join-name-input"
-        onInput={(e) => inputNameHandler(e)}
-      />
+        <label
+          htmlFor="sing-in-join-pass-input"
+          className="sing-in__label-text"
+        >
+          Password
+        </label>
+        <input
+          type="password"
+          className="sing-in-input"
+          id="sing-in-join-pass-input"
+          onInput={(e) => inputPassHandler(e)}
+        />
 
-      <label htmlFor="sing-in-join-mail-input" className="sing-in__label-text">
-        Email address
-      </label>
-      <input
-        type="mail"
-        className="sing-in-input"
-        id="sing-in-join-mail-input"
-        onInput={(e) => inputMailHandler(e)}
-      />
+        <p
+          className={
+            info.status ? "sing-in__alert-true" : "sing-in__alert-false"
+          }
+        >
+          {info.text}
+        </p>
 
-      <label htmlFor="sing-in-join-pass-input" className="sing-in__label-text">
-        Password
-      </label>
-      <input
-        type="password"
-        className="sing-in-input"
-        id="sing-in-join-pass-input"
-        onInput={(e) => inputPassHandler(e)}
-      />
+        <input
+          type="submit"
+          className="sing-in__submit-button"
+          value="Join Now"
+        />
 
-      <p
-        className={info.status ? "sing-in__alert-true" : "sing-in__alert-false"}
-      >
-        {info.text}
-      </p>
-
-      <button
-        onClick={() => joinSubmitHandler()}
-        className="sing-in__submit-button"
-      >
-        Join Now
-      </button>
-
-      <RegisterWith titleKeyWord={"Register"} />
+        <RegisterWith titleKeyWord={"Register"} />
+      </form>
     </div>
   );
 };

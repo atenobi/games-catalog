@@ -18,65 +18,52 @@
     width: 80%;
   }
 
-  .sing-in-swich-button {
-    width: 50%;
-    outline: none;
-    border: hidden;
-    background: colors.$general-white;
-    font-size: 20px;
-    color: colors.$primary-100;
-    padding: 20px;
-    border-radius: 5px 5px 0 0;
-    transition: 400ms;
-    &:hover {
-      background: colors.$btn-red-bg-light;
-      color: colors.$general-white;
+  .sing-in-form {
+    width: 100%;
+    background-color: colors.$general-white;
+    display: flex;
+    flex-direction: column;
+
+    .sing-in-input {
+      margin-top: 20px;
+      outline: none;
+      border: 1px solid colors.$grey-100;
+      padding: 15px 5px;
+      font-size: 20px;
     }
-    &:active {
-      background: colors.$btn-red-bg-light;
-      color: colors.$general-white;
+
+    .sing-in__label-text {
+      font-size: 17px;
+      font-weight: 600;
+      margin-top: 20px;
     }
-  }
 
-  .sing-in-input {
-    margin-top: 20px;
-    outline: none;
-    border: 1px solid colors.$grey-100;
-    padding: 15px 5px;
-    font-size: 20px;
-  }
-
-  .sing-in__label-text {
-    font-size: 17px;
-    font-weight: 600;
-    margin-top: 20px;
-  }
-
-  .sing-in__submit-button {
-    width: 30%;
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 20px;
-    border: none;
-    background-color: colors.$btn-red-bg-light;
-    color: colors.$general-white;
-    &:hover {
-      background: colors.$btn-red-bg-dark;
+    .sing-in__submit-button {
+      width: 30%;
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 20px;
+      border: none;
+      background-color: colors.$btn-red-bg-light;
       color: colors.$general-white;
+      &:hover {
+        background: colors.$btn-red-bg-dark;
+        color: colors.$general-white;
+      }
+      &:active {
+        background: colors.$btn-red-bg-dark;
+        color: colors.$general-white;
+      }
     }
-    &:active {
-      background: colors.$btn-red-bg-dark;
-      color: colors.$general-white;
+
+    .sing-in__alert-false {
+      color: colors.$error-red;
+      font-size: 20px;
     }
-  }
 
-  .sing-in__alert-false {
-    color: colors.$error-red;
-    font-size: 20px;
-  }
-
-  .sing-in__alert-true {
-    color: colors.$sucsess-green;
-    font-size: 20px;
+    .sing-in__alert-true {
+      color: colors.$sucsess-green;
+      font-size: 20px;
+    }
   }
 }

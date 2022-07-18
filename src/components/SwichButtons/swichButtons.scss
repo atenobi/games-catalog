@@ -1,0 +1,19 @@
+.sing-in-swich-button {
+    width: 50%;
+    outline: none;
+    border: hidden;
+    background: colors.$general-white;
+    font-size: 20px;
+    color: colors.$primary-100;
+    padding: 20px;
+    border-radius: 5px 5px 0 0;
+    transition: 400ms;
+    &:hover {
+      background: colors.$btn-red-bg-light;
+      color: colors.$general-white;
+    }
+    &:active {
+      background: colors.$btn-red-bg-light;
+      color: colors.$general-white;
+    }
+  }

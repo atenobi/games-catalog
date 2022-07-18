@@ -1,6 +1,6 @@
 # Used tools:
 
-1. Vite(boundler),
+1. Vite(bundler),
 2. JS,
 3. React,
 4. Redux,
